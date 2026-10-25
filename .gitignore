@@ -1,0 +1,36 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Environment
+.env
+
+# ChromaDB
+data/chroma_db/
+
+# Reports
+data/reports/*.pdf
+data/reports/*.docx
+data/reports/*.pptx
+data/reports/*.txt
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# VS Code
+.vscode/settings.json
+
+# Additional Python virtual environments
+venv/
+env/
+
+# Cached research data
+data/cache/
+
+# Downloaded research papers
+data/papers/
+
+# Log files
+*.log

@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+/* ---------- Global Theme ---------- */
+
+:root {
+  --bg: #020617;
+  --bg-secondary: #0f172a;
+  --card: rgba(15, 23, 42, 0.65);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #3b82f6;
+  --accent2: #8b5cf6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, Arial, sans-serif;
+  color: var(--text);
+
+  background:
+    radial-gradient(circle at top left, rgba(59,130,246,.18), transparent 35%),
+    radial-gradient(circle at top right, rgba(139,92,246,.12), transparent 30%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-secondary) 100%);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ---------- Selection ---------- */
+
+::selection {
+  background: rgba(59,130,246,.35);
+  color: white;
+}
+
+/* ---------- Reusable Premium Utilities ---------- */
+
+.glass {
+  background: rgba(15,23,42,.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.glow-blue {
+  box-shadow:
+    0 0 0 1px rgba(59,130,246,.15),
+    0 12px 40px rgba(37,99,235,.18);
+}
+
+.hover-lift {
+  transition: all .25s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* ---------- Global Premium Animations ---------- */
+
+/* Smooth transitions everywhere */
+button,
+a,
+input,
+textarea,
+select,
+.card,
+.glass {
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease,
+    background-color .22s ease,
+    opacity .22s ease;
+}
+
+/* Premium buttons */
+button:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+button:not(:disabled):active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Better focus */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(59,130,246,.18),
+    0 0 24px rgba(59,130,246,.18);
+}
+
+/* Glass cards */
+.glass-card {
+  background: rgba(15,23,42,.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.glass-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(59,130,246,.35);
+  box-shadow:
+    0 18px 45px rgba(37,99,235,.16),
+    inset 0 1px rgba(255,255,255,.04);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Soft pulse */
+@keyframes softPulse {
+  0%,100% { opacity:.9; }
+  50% { opacity:1; }
+}
+
+.pulse-soft {
+  animation: softPulse 3s ease-in-out infinite;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
